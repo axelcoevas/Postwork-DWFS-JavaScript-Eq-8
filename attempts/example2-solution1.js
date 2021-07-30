@@ -1,11 +1,9 @@
-/*
-RETO 2
+/*RETO 2*/
 
-Escribir una función chunk que recibe 
+/*Escribir una función chunk que recibe 
 un arreglo y un número entero size. 
 La función debe dividir el arreglo en múltiples 
-arreglos del tamaño determinado por size.
-*/
+arreglos del tamaño determinado por size.*/
 
 function chunk(array, size) {
   let finalArray = [];
@@ -14,8 +12,7 @@ function chunk(array, size) {
     let tempArray = [];
     for (let j = 0; j < array.length; j++) {
       aux++;
-      if (array[aux] != undefined)
-        tempArray.push(aux == 0 ? array[j] : array[aux]);
+      if (array[aux] != undefined) tempArray.push(array[aux]);
       if (j == size - 1) {
         finalArray.push(tempArray.flat());
         break;
