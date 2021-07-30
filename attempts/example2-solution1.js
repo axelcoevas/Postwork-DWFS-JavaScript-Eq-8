@@ -31,7 +31,7 @@ console.log("Test 3:", chunk(data, 3)); // [[1, 2, 3], [4, 5, 6], [7, 8]]
 
 //Solución Axel
 
-function chunk(array, size) {
+function chunk2(array, size) {
   let newArray = [];
   let mini = [];
   for (let i = 0; i < array.length; i++) {
@@ -45,4 +45,4 @@ function chunk(array, size) {
   return newArray;
 }
 
-console.log(chunk([1, 2, 3, 4, 5, 6, 7, 8], 3));
+console.log(chunk2([1, 2, 3, 4, 5, 6, 7, 8], 3));
