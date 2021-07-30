@@ -10,7 +10,7 @@ la frecuencia.
 */
 
 function frequency(str) {
-  let strArray = str.split("").sort();
+  const strArray = str.split("").sort();
   let aux = -1;
   let finalObj = {};
   for (let i = 0; i < strArray.length; i++) {
