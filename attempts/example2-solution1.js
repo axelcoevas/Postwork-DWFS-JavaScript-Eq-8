@@ -46,3 +46,41 @@ function chunk2(array, size) {
 }
 
 console.log(chunk2([1, 2, 3, 4, 5, 6, 7, 8], 3));
+
+
+
+// Solución Eleazar Cabrera
+function chunk3(array, size) {
+     let resultado = [];
+     let parcial = [];
+     let index = 0
+  if(size<array.length){
+    let particiones = Math.trunc(array.length/size);
+    let ultimaparticion = array.length%size;
+        for(var i = 0; i<particiones; i++){
+            for(var j = 0; j<size; j++){
+                parcial.push(array[index])
+                index++
+            }
+            resultado.push(parcial)
+            parcial = [];
+        }
+        if(ultimaparticion==0){
+            return resultado
+        }else {
+        // Última partición - tamaño parcial
+            for(var j = index; j<array.length;j++){
+                parcial.push(array[index])
+                index++
+            }
+            resultado.push(parcial)
+            return resultado
+        }    
+  }else{
+    console.log("Elige menos particiones")
+  }
+}
+
+onsole.log("Test 1:", chunk3(data, 1)); 
+console.log("Test 2:", chunk3(data, 2)); 
+console.log("Test 3:", chunk3(data, 3)); 
