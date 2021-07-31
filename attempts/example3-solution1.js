@@ -48,3 +48,38 @@ function frecuency2(string) {
 
   return frecuency;
 }
+
+
+
+// Solución Eleazar
+ function frequency3(string) {
+
+    let caracter = [];
+    let resultado = [];
+
+    //Obtener todos los caracteres
+    for(var i = 0; i < string.length; i++){
+        caracter.push(string[i])
+    }
+
+    //Eliminar duplicados
+    let caracteres = caracter.filter((item,index)=>{
+        return caracter.indexOf(item) === index;
+      })
+
+    caracteres.sort();
+    
+    cuenta = 0;
+
+    for(var i=0; i < caracteres.length; i++){
+    posicion = string.indexOf(caracteres[i]);
+    while ( posicion != -1 ) {
+            cuenta++;
+            posicion = string. indexOf(caracteres[i],posicion+1);
+        }
+    var letra = caracteres[i];
+    resultado[letra] = cuenta;
+    cuenta = 0;
+    }
+    return resultado
+}
