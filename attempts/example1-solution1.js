@@ -31,3 +31,36 @@ console.log("Test 2:", deepEqual(1, "1")); // false
 console.log("Test 3:", deepEqual(john, john)); // true
 console.log("Test 4:", deepEqual(john, { firstName: "John", lastName: "Doe" })); // true
 console.log("Test 5:", deepEqual(john, { firstName: "John" })); // false
+
+
+/* SOLUCION ELEAZAR CABRERA */
+
+function deepEqual(a, b) {
+    var contador = 0;
+    if(typeof(a)==typeof(b)){
+        if(typeof(a)=='object'){
+            if(Object.keys(a).length == Object.keys(b).length){
+                for(var i=0; i<Object.keys(a).length; i++){
+                    if(!deepEqual(Object.keys(a)[i],Object.keys(b)[i])){
+                        contador++
+                    }
+                }
+                if(contador==0){
+                    return true
+                }else{
+                    return false
+                }
+            }else{
+                return false
+            }
+        }else {
+            if(a==b){
+                return true
+            }else{
+                return false
+            }
+        }
+    }else{
+        return false
+    } 
+}
