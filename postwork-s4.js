@@ -47,6 +47,7 @@ console.log(chunk([1, 2, 3, 4, 5, 6, 7, 8], 3));
 //  Ejercicio 3
 
 function frequency(string) {
+  let frecuency = [];
   for (let i = 0; i < string.length; i++) {
     let char = string.charAt(i);
     if (frequency[char]) {
