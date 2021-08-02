@@ -50,14 +50,14 @@ function frequency(string) {
   let frecuency = [];
   for (let i = 0; i < string.length; i++) {
     let char = string.charAt(i);
-    if (frequency[char]) {
-      frequency[char]++;
+    if (frecuency[char]) {
+      frecuency[char]++;
     } else {
-      frequency[char] = 1;
+      frecuency[char] = 1;
     }
   }
 
-  return frequency;
+  return frecuency;
 }
 
 console.log("Test 1:", frequency("cccbbbaaa"));
