@@ -83,3 +83,47 @@ function frecuency2(string) {
     }
     return resultado
 }
+
+// ALONSO MARAÑÓN
+
+function frequency(string){
+  let uset = {};
+  for(let letter in string)
+  {
+      if(string[letter] in uset)
+          uset[string[letter]]++;
+
+      else
+          uset[string[letter]] = 1;
+  }
+
+  let oset = {};
+  let min = Object.keys(uset)[0].charCodeAt(0);
+
+  while(Object.keys(uset).length > 1)
+  {
+      var key;
+      for(key in uset)
+      {
+          if(key.charCodeAt(0) < min)
+              min = key.charCodeAt(0);
+      }
+
+      oset[String.fromCharCode(min)] = uset[String.fromCharCode(min)]; 
+      delete uset[String.fromCharCode(min)];
+      min = Object.keys(uset)[0].charCodeAt(0);
+  }
+
+  oset[Object.keys(uset)[0]] = uset[Object.keys(uset)[0]];
+  
+  return oset;
+}
+
+ console.log('Test 1:', frequency('cccbbbaaa'))
+ // {a: 3, b: 3, c: 3}
+ console.log('Test 2:', frequency('www.bedu.org'))
+ // {.: 2, b: 1, d: 1, e: 1, g: 1, o: 1, r: 1, u: 1, w: 3}
+ console.log('Test 3:', frequency('john.doe@domain.com'))
+ // {.: 2, @: 1, a: 1, c: 1, d: 2, e: 1, h: 1, i: 1, j: 1, m: 2, n: 2, o: 4}
+
+

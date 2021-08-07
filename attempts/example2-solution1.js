@@ -84,3 +84,41 @@ function chunk3(array, size) {
 onsole.log("Test 1:", chunk3(data, 1)); 
 console.log("Test 2:", chunk3(data, 2)); 
 console.log("Test 3:", chunk3(data, 3)); 
+
+// ALONSO MARAÑÓN //
+
+function chunk(array, size) 
+{
+    var newArray = [];
+
+    const n = parseInt(array.length / size);
+
+    for(let i = 0; i < n; i++)
+    {
+        var tempArray = [size];
+
+        for(let j = size * i, k = 0; j < ((size * i) + (size)); j++, k++)
+        {
+            tempArray[k] = array[j]; 
+        }
+
+        newArray.push(tempArray);
+    }
+
+    //Remainding elements
+    for(let i = 0; i < array.length % size; i++)
+    {
+      newArray.push(array[n*size + i]);
+    }
+
+    return newArray;
+};
+
+  const data = [1, 2, 3, 4, 5, 6, 7, 8]
+
+  chunk(data, 3);
+  
+  console.log('Test 1:', chunk(data, 1)) // [[1], [2], [3], [4], [5], [6], [7], [8]]
+  console.log('Test 2:', chunk(data, 2)) // [[1, 2], [3, 4], [5, 6], [7, 8]]
+  console.log('Test 3:', chunk(data, 3)) // [[1, 2, 3], [4, 5, 6], [7, 8]]
+  
