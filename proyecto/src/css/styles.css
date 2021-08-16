@@ -1,0 +1,46 @@
+body {
+  background-color: rgb(238, 238, 238);
+}
+
+.recipe-container {
+  margin: 0 1rem 1rem 1rem;
+  padding-bottom: 2rem;
+}
+
+.main-navbar {
+  padding: 1rem;
+  margin-bottom: 2rem;
+}
+
+.main-image {
+  width: 100%;
+  height: 42vh;
+  object-fit: cover;
+}
+
+.title-container {
+  margin-bottom: 1rem;
+}
+
+.frame-video {
+  width: 100%;
+  height: 80vh;
+  margin-bottom: 1rem;
+}
+
+.instructions-container {
+  margin-bottom: 1rem;
+}
+.recommended-meal {
+  max-height: 25vh;
+  object-fit: cover;
+}
+
+.recommended-container {
+  margin-bottom: 1rem;
+}
+
+.carousel-inner > .carousel-item > img {
+  max-height: 50vh;
+  object-fit: cover;
+}
