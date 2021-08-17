@@ -1,6 +1,8 @@
 //  Obtiene de la API por ocurrencia de cadena
 async function searchByName(str) {
-  const response = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${str}`);
+  const response = await fetch(
+    `https://www.themealdb.com/api/json/v1/1/search.php?s=${str}`
+  );
   response.json().then(printReceipeCards);
 }
 
@@ -11,7 +13,9 @@ function printReceipeCards(data) {
 
 //  Busca la comida por id
 async function getMeal(id) {
-  const response = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?s=${id}`);
+  const response = await fetch(
+    `https://www.themealdb.com/api/json/v1/1/lookup.php?s=${id}`
+  );
   response.json().then(printReceipeDetail);
 }
 

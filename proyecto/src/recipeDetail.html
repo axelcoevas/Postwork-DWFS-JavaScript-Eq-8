@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="../node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="../node_modules/@fortawesome/fontawesome-free/css/all.css"
+    />
+
+    <link rel="stylesheet" href="css/styles.css" />
+    <title>Recipe Detail</title>
+  </head>
+  <body>
+    <!-- Navbar-->
+    <nav class="main-navbar navbar navbar-expand-md navbar-dark bg-dark">
+      <div class="d-flex flex-grow-1">
+        <a href="#" class="navbar-brand">Recetar.io</a>
+        <form class="mr-2 my-auto w-100 d-inline-block order-1">
+          <div class="input-group">
+            <input
+              type="text"
+              class="form-control border border-right-0"
+              placeholder="Search..."
+            />
+            <span class="input-group-append">
+              <button
+                class="btn btn-outline-light border border-left-0"
+                type="button"
+              >
+                <i class="fa fa-search"></i>
+              </button>
+            </span>
+
+            <span class="input-group-append">
+              <button
+                class="btn btn-outline-light border border-left-0"
+                type="button"
+              >
+                <i class="fa fa-random"></i>
+              </button>
+            </span>
+          </div>
+        </form>
+      </div>
+    </nav>
+
+    <!-- Container-->
+    <div class="recipe-container">
+      <!-- Title Container-->
+      <div class="title-container">
+        <div class="row">
+          <!-- Image & Title-->
+          <div class="col-sm-12 col-md-4">
+            <h1 class="bg-dark text-center text-light">
+              Spicy Arrabiata Penne
+            </h1>
+            <img
+              class="main-image"
+              src="https://www.themealdb.com//images//media//meals//ustsqw1468250014.jpg"
+              alt="spicy Arrabiata Penne"
+            />
+          </div>
+
+          <!-- Carousel-->
+          <div class="col-sm-12 col-md-8">
+            <div
+              id="carouselExampleDark"
+              class="carousel carousel-dark slide"
+              data-bs-ride="carousel"
+            >
+              <div class="carousel-indicators">
+                <button
+                  type="button"
+                  data-bs-target="#carouselExampleDark"
+                  data-bs-slide-to="0"
+                  class="active"
+                  aria-current="true"
+                  aria-label="Slide 1"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#carouselExampleDark"
+                  data-bs-slide-to="1"
+                  aria-label="Slide 2"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#carouselExampleDark"
+                  data-bs-slide-to="2"
+                  aria-label="Slide 3"
+                ></button>
+              </div>
+              <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="3500">
+                  <img
+                    src="https://m.media-amazon.com/images/I/31R9C9IZR4L.jpg"
+                    class="d-block w-100"
+                    alt="penne rigate"
+                  />
+                  <div class="carousel-caption d-none d-md-block">
+                    <h5>penne rigate</h5>
+                    <p>1 pound</p>
+                  </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="3500">
+                  <img
+                    src="https://osssource.alizila.com/uploads/2019/07/olive-oil.jpg"
+                    class="d-block w-100"
+                    alt="olive oil"
+                  />
+                  <div class="carousel-caption d-none d-md-block">
+                    <h5>olive oil</h5>
+                    <p>1/4 cup</p>
+                  </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="3500">
+                  <img
+                    src="https://e00-elmundo.uecdn.es/assets/multimedia/imagenes/2018/10/03/15385788043643.jpg"
+                    class="d-block w-100"
+                    alt="garlic"
+                  />
+                  <div class="carousel-caption d-none d-md-block">
+                    <h5>garlic</h5>
+                    <p>3 cloves</p>
+                  </div>
+                </div>
+              </div>
+              <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#carouselExampleDark"
+                data-bs-slide="prev"
+              >
+                <span
+                  class="carousel-control-prev-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#carouselExampleDark"
+                data-bs-slide="next"
+              >
+                <span
+                  class="carousel-control-next-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Instructions-->
+      <section
+        class="instructions-container accordion accordion-flush"
+        id="accordionFlushExample"
+      >
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingOne">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseOne"
+              aria-expanded="false"
+              aria-controls="flush-collapseOne"
+            >
+              Instructions
+            </button>
+          </h2>
+          <div
+            id="flush-collapseOne"
+            class="accordion-collapse collapse"
+            aria-labelledby="flush-headingOne"
+            data-bs-parent="#accordionFlushExample"
+          >
+            <div class="accordion-body">
+              <ul>
+                <li>
+                  Bring a large pot of water to a boil. Add kosher salt to the
+                  boiling water, then add the pasta.
+                </li>
+                <li>
+                  Cook according to the package instructions, about 9 minutes.
+                </li>
+                <li>
+                  In a large skillet over medium-high heat, add the olive oil
+                  and heat until the oil starts to shimmer.
+                </li>
+                <li>
+                  Add the garlic and cook, stirring, until fragrant, 1 to 2
+                  minutes.
+                </li>
+                <li>
+                  Add the chopped tomatoes, red chile flakes, Italian seasoning
+                  and salt and pepper to taste.
+                </li>
+                <li>Bring to a boil and cook for 5 minutes.</li>
+                <li>Remove from the heat and add the chopped basil.</li>
+                <li>Drain the pasta and add it to the sauce.</li>
+                <li>
+                  Garnish with Parmigiano-Reggiano flakes and more basil and
+                  serve warm.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- YouTube Video-->
+      <iframe
+        class="frame-video"
+        src="https://www.youtube.com/embed/1IszT_guI08"
+        title="Spicy penne Arrabiata"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+
+      <!-- We recommend you-->
+      <section class="recommended-container">
+        <h2 class="text-center">We recommend you</h2>
+        <div class="row">
+          <div class="col-sm-4">
+            <img
+              class="recommended-meal card-img-top"
+              src="https://www.eluniversal.com.mx/sites/default/files/2019/12/19/platillos-mexicanos-extranjeros.jpg"
+              alt="Card image cap"
+            />
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Meal 1</h5>
+                <p class="card-text">
+                  With supporting text below as a natural lead-in to additional
+                  content.
+                </p>
+                <a href="#" class="btn btn-dark">Lean more</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="card">
+              <img
+                class="recommended-meal card-img-top"
+                src=" https://saboryestilo.com.mx/wp-content/uploads/2019/09/platillos-tipicos-de-mexico1-1200x675.jpg"
+                alt="Card image cap"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Meal 2</h5>
+                <p class="card-text">
+                  With supporting text below as a natural lead-in to additional
+                  content.
+                </p>
+                <a href="#" class="btn btn-dark">Lean more</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="card">
+              <img
+                class="recommended-meal card-img-top"
+                src="https://www.mexicodesconocido.com.mx/wp-content/uploads/2018/08/platillo-Tikin-Xic-29KITCH5-superJumbo.jpg"
+                alt="Card image cap"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Meal 3</h5>
+                <p class="card-text">
+                  With supporting text below as a natural lead-in to additional
+                  content.
+                </p>
+                <a href="#" class="btn btn-dark">Lean more</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Tags -->
+      <section>
+        <h2>Tags</h2>
+        <button type="button" class="btn btn-outline-dark">#Pasta</button>
+        <button type="button" class="btn btn-outline-dark">#Curry</button>
+      </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-center text-light text-lg-start">
+      <div class="text-center p-3">
+        &copy; 2021 Copyright
+        <a class="text-light" href="#">Recetar.io</a>
+      </div>
+    </footer>
+
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
