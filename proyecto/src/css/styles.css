@@ -2,6 +2,13 @@ body {
   background-color: rgb(238, 238, 238);
 }
 
+/*footer {
+  margin-top: calc(90vh);
+}*/
+
+.col-sm-4 {
+  margin-bottom: 1.5rem;
+}
 .recipe-container {
   margin: 0 1rem 1rem 1rem;
   padding-bottom: 2rem;
@@ -48,7 +55,7 @@ body {
 /* Segunda barra */
 
 body {
-  background-image: url('../../assets/mockup-03.png');
+  background-image: url("../../assets/mockup-03.png");
   background-size: 100%;
 }
 

@@ -3,12 +3,88 @@ async function searchByName(str) {
   const response = await fetch(
     `https://www.themealdb.com/api/json/v1/1/search.php?s=${str}`
   );
-  response.json().then(printReceipeCards);
+
+  response.json().then((data) => printReceipeCards(data, str));
 }
 
 //  Imprime las tarjetas de las comidas que se le pasan como data
-function printReceipeCards(data) {
-  console.log(data);
+function printReceipeCards(data, str) {
+  const resultsContainer = document.getElementById("results-container");
+  clearContainers([resultsContainer]);
+
+  const h2 = document.createElement("H2");
+  const title =
+    data.meals != null && data.meals.length > 0
+      ? `Results for ${str}`
+      : `Results for ${str} not found :c`;
+  h2.textContent = title;
+
+  resultsContainer.appendChild(h2);
+  resultsContainer.className = "results-container visible";
+
+  document.getElementById("recipe-container").className =
+    "recipe-container invisible";
+
+  if (data.meals != null) {
+    const mDocumentFragment = new DocumentFragment();
+    const colsArray = [];
+
+    data.meals.forEach((e, index) => {
+      const col = document.createElement("div");
+      col.className = "col-sm-4";
+
+      const img = document.createElement("img");
+      img.className = "recommended-meal card-img-top";
+      img.src = e.strMealThumb;
+      img.alt = e.strMeal;
+      col.appendChild(img);
+
+      const card = document.createElement("div");
+      card.className = "card";
+
+      const cardBody = document.createElement("div");
+      cardBody.className = "card-body";
+
+      const h5 = document.createElement("h5");
+      h5.className = "card-title";
+      h5.innerHTML = e.strMeal;
+
+      const a = document.createElement("a");
+      a.className = "btn btn-dark";
+      a.innerText = "Learn more";
+      a.addEventListener("click", () => {
+        clearContainers([
+          document.getElementById("results-container"),
+          recommendRow,
+          tags,
+          document.querySelector(".carousel-inner"),
+          document.querySelector(".carousel-indicators"),
+        ]);
+        getMeal(e.idMeal);
+      });
+
+      cardBody.appendChild(h5);
+      cardBody.appendChild(a);
+
+      card.appendChild(cardBody);
+      col.appendChild(card);
+      colsArray.push(col);
+
+      if ((index + 1) % 3 === 0 || data.meals.length < 3) {
+        const newRow = document.createElement("DIV");
+        newRow.className = "row";
+        colsArray.forEach((col) => {
+          newRow.appendChild(col);
+        });
+
+        console.log(newRow);
+        mDocumentFragment.appendChild(newRow);
+        colsArray.length = 0;
+      }
+    });
+
+    resultsContainer.appendChild(mDocumentFragment);
+  }
 }
 
 //  Busca la comida por id
@@ -31,8 +107,11 @@ async function getRandomMeal() {
 function printReceipeDetail(data) {
   const meal = data.meals[0];
 
-  document.getElementById('recipe-container').className = 'recipe-container visible';
-  document.getElementById('results-container').className = 'recipe-container invisible';
+  document.getElementById("recipe-container").className =
+    "recipe-container visible";
+
+  document.getElementById("results-container").className =
+    "recipe-container invisible";
 
   const strMeal = document.getElementById("strMeal");
   const strMealThumb = document.getElementById("strMealThumb");
