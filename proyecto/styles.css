@@ -1,0 +1,45 @@
+*{
+    margin: 0px;
+    padding:  0px;
+}
+
+body{
+    background-image: url("./mockup-01.png");
+    background-size: 100%;
+}
+
+#barra{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-width: 3px;
+    border-color: rgba(0, 0, 0, 0.322);
+    border-style: solid;
+    border-radius: 10%;
+    margin: 5%;
+    padding: 10px;
+}
+
+#contenido{
+   width: 95%;
+   margin-top: 25%;
+   margin-left: 5%;
+}
+
+input, button{
+    padding: 10px;
+    margin: 10px;
+    width: 13%;
+}
+
+button{
+    background-color: rgba(0, 0, 0, 0.05);
+    border-width: 1px;
+    border-color: black;
+    border-style: solid;
+}
+
+#buscar{
+    width: 70%;
+
+}
