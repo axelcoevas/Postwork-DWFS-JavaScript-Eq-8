@@ -34,10 +34,11 @@ function printReceipeDetail(data) {
   const instructions = document.getElementById('instructions');
   const strYoutube = document.getElementById('strYoutube');
   const tags = document.getElementById('tags');
-  const recommendRow = document.getElementById('recommendRow');
 
   strMeal.innerHTML = meal.strMeal;
   strMealThumb.src = meal.strMealThumb;
+
+  const ingredients = getIngredients(meal);
 
   meal.strInstructions.split('.').forEach(e => {
     const li = document.createElement('li');
@@ -56,49 +57,68 @@ function printReceipeDetail(data) {
     tags.appendChild(button);
   });
 
-  getRecommended(meal.strCategory).then(rec => {
-    rec.forEach(e => {
-      const col = document.createElement('div');
-      col.className = 'col-sm-4';
+  getRecommended(meal.strCategory);
 
-      const img = document.createElement('img');
-      img.className = 'recommended-meal card-img-top';
-      img.src = e.strMealThumb;
-      img.alt = e.strMeal;
-      col.appendChild(img);
+  console.log(meal);
+}
 
-      const card = document.createElement('div');
-      card.className = 'card';
-
-      const cardBody = document.createElement('div');
-      cardBody.className = 'card-body';
-
-      const h5 = document.createElement('h5');
-      h5.className = 'card-title';
-      h5.innerHTML = e.strMeal;
-
-      const a = document.createElement('a');
-      //agregar funcionamiento de onclick
-      a.className = 'btn btn-dark';
-      a.innerText = 'Learn more';
-
-      cardBody.appendChild(h5);
-      cardBody.appendChild(a);
-
-      card.appendChild(cardBody);
-
-      col.appendChild(card);
-
-      recommendRow.appendChild(col);
-      console.log(e);
-    });
-  });
+function getIngredients(data) {
+  const ings = [];
+  for (let i = 1; i <= 20; i++) {
+    if (data['strIngredient' + i] !== null) {
+      const ing = {
+        "ingredient": data['strIngredient' + i].replaceAll(' ', '_'),
+        "measure": data['strMeasure' + i]
+      };
+      ings.push(ing);
+    }
+  }
+  return ings;
 }
 
 async function getRecommended(area) {
   const response = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${area}`);
   const data = await response.json();
-  return data.meals.slice(0, 3);
+  printRecommended(data.meals);
+}
+
+function printRecommended(data) {
+  const recommendRow = document.getElementById('recommendRow');
+
+  data.forEach(e => {
+    const col = document.createElement('div');
+    col.className = 'col-sm-4';
+
+    const img = document.createElement('img');
+    img.className = 'recommended-meal card-img-top';
+    img.src = e.strMealThumb;
+    img.alt = e.strMeal;
+    col.appendChild(img);
+
+    const card = document.createElement('div');
+    card.className = 'card';
+
+    const cardBody = document.createElement('div');
+    cardBody.className = 'card-body';
+
+    const h5 = document.createElement('h5');
+    h5.className = 'card-title';
+    h5.innerHTML = e.strMeal;
+
+    const a = document.createElement('a');
+    //agregar funcionamiento de onclick
+    a.className = 'btn btn-dark';
+    a.innerText = 'Learn more';
+
+    cardBody.appendChild(h5);
+    cardBody.appendChild(a);
+
+    card.appendChild(cardBody);
+
+    col.appendChild(card);
+
+    recommendRow.appendChild(col);
+  });
 }
 
 getMeal(52775);
