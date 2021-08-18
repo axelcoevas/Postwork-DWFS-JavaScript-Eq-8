@@ -15,8 +15,8 @@ function printReceipeCards(data, str) {
   const h2 = document.createElement("H2");
   const title =
     data.meals != null && data.meals.length > 0
-      ? `Results for ${str}`
-      : `Results for ${str} not found :c`;
+      ? `Results for "${str}"`
+      : `Results for "${str}" not found :c`;
   h2.textContent = title;
 
   resultsContainer.appendChild(h2);
@@ -107,11 +107,7 @@ async function getRandomMeal() {
 function printReceipeDetail(data) {
   const meal = data.meals[0];
 
-  document.getElementById("recipe-container").className =
-    "recipe-container visible";
-
-  document.getElementById("results-container").className =
-    "recipe-container invisible";
+  showDetail();
 
   const strMeal = document.getElementById("strMeal");
   const strMealThumb = document.getElementById("strMealThumb");
@@ -297,6 +293,13 @@ function randomiseArray(data, n) {
     taken[x] = --len in taken ? taken[len] : len;
   }
   return result;
+}
+
+function showDetail() {
+  document.getElementById("recipe-container").className =
+    "recipe-container visible";
+  document.getElementById("results-container").className =
+    "results-container invisible";
 }
 
 //  Hace una búsqueda con el botón de búsqueda

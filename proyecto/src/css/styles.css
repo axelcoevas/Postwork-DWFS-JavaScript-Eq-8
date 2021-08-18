@@ -2,13 +2,16 @@ body {
   background-color: rgb(238, 238, 238);
 }
 
-/*footer {
-  margin-top: calc(90vh);
-}*/
-
 .col-sm-4 {
   margin-bottom: 1.5rem;
+  width: 33.3333%;
 }
+
+.row {
+  margin-right: 0;
+  margin-left: auto;
+}
+
 .recipe-container {
   margin: 0 1rem 1rem 1rem;
   padding-bottom: 2rem;
@@ -55,7 +58,7 @@ body {
 /* Segunda barra */
 
 body {
-  background-image: url("../../assets/mockup-03.png");
+  background-image: url('../../assets/mockup-03.png');
   background-size: 100%;
 }
 
@@ -65,4 +68,8 @@ body {
 
 .visible {
   display: block;
+}
+
+.results-container {
+  min-height: calc(80vh);
 }
