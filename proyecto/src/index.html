@@ -25,12 +25,14 @@
         <form class="mr-2 my-auto w-100 d-inline-block order-1">
           <div class="input-group">
             <input
+              id="txtSearch"
               type="text"
               class="form-control border border-right-0"
               placeholder="Search..."
             />
             <span class="input-group-append">
               <button
+                id="btnSearch"
                 class="btn btn-outline-light border border-left-0"
                 type="button"
               >
@@ -40,6 +42,7 @@
 
             <span class="input-group-append">
               <button
+                id="btnRandom"
                 class="btn btn-outline-light border border-left-0"
                 type="button"
               >
@@ -76,28 +79,7 @@
               class="carousel carousel-dark slide"
               data-bs-ride="carousel"
             >
-              <div class="carousel-indicators">
-                <button
-                  type="button"
-                  data-bs-target="#carouselExampleDark"
-                  data-bs-slide-to="0"
-                  class="active"
-                  aria-current="true"
-                  aria-label="Slide 1"
-                ></button>
-                <button
-                  type="button"
-                  data-bs-target="#carouselExampleDark"
-                  data-bs-slide-to="1"
-                  aria-label="Slide 2"
-                ></button>
-                <button
-                  type="button"
-                  data-bs-target="#carouselExampleDark"
-                  data-bs-slide-to="2"
-                  aria-label="Slide 3"
-                ></button>
-              </div>
+              <div class="carousel-indicators"></div>
               <div id="carousel" class="carousel-inner"></div>
               <button
                 class="carousel-control-prev"
