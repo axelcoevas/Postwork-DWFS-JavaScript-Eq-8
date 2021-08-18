@@ -44,3 +44,18 @@ body {
   max-height: 50vh;
   object-fit: cover;
 }
+
+/* Segunda barra */
+
+body {
+  background-image: url('../../assets/mockup-03.png');
+  background-size: 100%;
+}
+
+.invisible {
+  display: none;
+}
+
+.visible {
+  display: block;
+}

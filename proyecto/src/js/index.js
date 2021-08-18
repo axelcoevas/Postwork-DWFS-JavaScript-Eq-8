@@ -31,6 +31,9 @@ async function getRandomMeal() {
 function printReceipeDetail(data) {
   const meal = data.meals[0];
 
+  document.getElementById('recipe-container').className = 'recipe-container visible';
+  document.getElementById('results-container').className = 'recipe-container invisible';
+
   const strMeal = document.getElementById("strMeal");
   const strMealThumb = document.getElementById("strMealThumb");
   const instructions = document.getElementById("instructions");
@@ -157,6 +160,7 @@ async function getRecommended(area) {
 }
 
 function printRecommended(data) {
+  data = randomiseArray(data, 3);
   const recommendRow = document.getElementById("recommendRow");
 
   data.forEach((e) => {
@@ -203,6 +207,19 @@ function printRecommended(data) {
   });
 }
 
+//  Obtiene n elementos al azar de un array
+function randomiseArray(data, n) {
+  let result = new Array(n);
+  let len = data.length;
+  let taken = new Array(len);
+  while (n--) {
+    let x = Math.floor(Math.random() * len);
+    result[n] = data[x in taken ? taken[x] : x];
+    taken[x] = --len in taken ? taken[len] : len;
+  }
+  return result;
+}
+
 //  Hace una búsqueda con el botón de búsqueda
 const makeASearch = (searchButton) => {
   searchButton.addEventListener("click", (e) => {
@@ -247,7 +264,6 @@ const randomSearch = (randomButton) => {
   });
 };
 
-getMeal(52775);
 makeASearchWithEnter(document.querySelector("#txtSearch"));
 makeASearch(document.querySelector("#btnSearch"));
 randomSearch(document.querySelector("#btnRandom"));
